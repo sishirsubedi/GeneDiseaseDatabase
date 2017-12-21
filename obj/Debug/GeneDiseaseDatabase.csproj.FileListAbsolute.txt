@@ -1,0 +1,66 @@
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\ApplicationInsights.config
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\csc.exe
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\vbc.exe
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\VBCSCompiler.exe
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\GeneDiseaseDatabase.dll.config
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\GeneDiseaseDatabase.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\GeneDiseaseDatabase.pdb
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.Web.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.Web.xml
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\obj\Debug\GeneDiseaseDatabase.dll
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\obj\Debug\GeneDiseaseDatabase.pdb
+C:\Users\ibm-lenovo\Desktop\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\obj\Debug\GeneDiseaseDatabase.csprojResolveAssemblyReference.cache
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\ApplicationInsights.config
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\csc.exe
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\vbc.exe
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\VBCSCompiler.exe
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\GeneDiseaseDatabase.dll.config
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\GeneDiseaseDatabase.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\GeneDiseaseDatabase.pdb
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.Web.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.Web.xml
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\obj\Debug\GeneDiseaseDatabase.csprojResolveAssemblyReference.cache
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\obj\Debug\GeneDiseaseDatabase.dll
+C:\Users\ibm-lenovo\Desktop\New folder\SPRING 2016\Database Systems\GeneDiseaseDatabase\GeneDiseaseDatabase\obj\Debug\GeneDiseaseDatabase.pdb

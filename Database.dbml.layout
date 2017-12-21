@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 21.5, 10" name="Database">
+  <DataContextMoniker Name="/DatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b885c32a-74f5-4e5c-bfa0-d604eec7e4a3" absoluteBounds="19.25, 6.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DatabaseDataContext/UserLogin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88852fe8-9196-4fb2-9e29-52f9dc69e184" absoluteBounds="19.265, 7.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed7aa3f1-2f13-4dd4-807e-658a5293058f" absoluteBounds="6.25, 7.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DatabaseDataContext/RNA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5c5d295-44e9-4bd3-b55a-a4cbe5681e22" absoluteBounds="6.2650000000000006, 8.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="199e62f6-74c2-47db-9815-e5c233964cbd" absoluteBounds="10.375, 7.375, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DatabaseDataContext/Protein" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1a1854f-3ea1-4ea7-90e0-6be47bcf1876" absoluteBounds="10.39, 7.8350000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="534499b2-d202-4f95-b5e2-df10636eb9e7" absoluteBounds="7.5, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DatabaseDataContext/PatientDiagnosi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="176ea286-808a-4001-a379-32d086826213" absoluteBounds="7.5150000000000006, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e276356-0113-4d54-8da3-95d313b9e957" absoluteBounds="10.25, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DatabaseDataContext/Patient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5bdc29b-9c76-4468-be7b-88d7deeecbbe" absoluteBounds="10.265, 0.96000000000000085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85934cd6-910f-4080-b8cc-9ad73124ae60" absoluteBounds="10.25, 3.875, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/DatabaseDataContext/Pathway" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da7d1c26-0715-4b1a-94a3-99482920f953" absoluteBounds="10.265, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21f34b10-c2a6-4bf8-88f2-f7112ff861a7" absoluteBounds="7.625, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DatabaseDataContext/GeneNetwork" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bea24394-54b7-4dc8-8af2-c80b5f803af1" absoluteBounds="7.6400000000000006, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f457e38e-0fc7-492f-8dc2-44fb3375efe2" absoluteBounds="4.875, 4.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DatabaseDataContext/Gene" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d02b385-015a-4293-99dc-f2cf807419b2" absoluteBounds="4.89, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fdbba00-1e07-44b6-bd7b-796a45eea05c" absoluteBounds="2.375, 7.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DatabaseDataContext/DNA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00524a39-9152-427d-ba87-77b2cf4ac81e" absoluteBounds="2.3900000000000006, 7.9600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5d114ef-3fd1-4066-9bb8-c45976c91a42" absoluteBounds="2.125, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DatabaseDataContext/DiseaseGenetic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ded4857-18d4-4db4-aab9-926a5c596c98" absoluteBounds="2.1400000000000006, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ad3975a-76d3-4286-a07e-fc09da18a144" absoluteBounds="4.625, 1.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DatabaseDataContext/Disease" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17577e09-c7ff-4492-a264-57ca2e311822" absoluteBounds="4.64, 1.5850000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 8.53929768880208); (10.375 : 8.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/RNA/RNA_Protein" />
+      <nodes>
+        <classShapeMoniker Id="ed7aa3f1-2f13-4dd4-807e-658a5293058f" />
+        <classShapeMoniker Id="199e62f6-74c2-47db-9815-e5c233964cbd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 2.03929768880208); (9.5 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/Patient/Patient_PatientDiagnosi" />
+      <nodes>
+        <classShapeMoniker Id="3e276356-0113-4d54-8da3-95d313b9e957" />
+        <classShapeMoniker Id="534499b2-d202-4f95-b5e2-df10636eb9e7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 5.00564697265625); (9.625 : 5.00564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/Pathway/Pathway_GeneNetwork" />
+      <nodes>
+        <classShapeMoniker Id="85934cd6-910f-4080-b8cc-9ad73124ae60" />
+        <classShapeMoniker Id="21f34b10-c2a6-4bf8-88f2-f7112ff861a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.875 : 5.08214884440104); (7.625 : 5.08214884440104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DatabaseDataContext/Gene/Gene_GeneNetwork" />
+      <nodes>
+        <classShapeMoniker Id="f457e38e-0fc7-492f-8dc2-44fb3375efe2" />
+        <classShapeMoniker Id="21f34b10-c2a6-4bf8-88f2-f7112ff861a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 8.53929768880208); (5.44791666666667 : 8.53929768880208 : JumpStart); (5.61458333333333 : 8.53929768880208 : JumpEnd); (6.25 : 8.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/DNA/DNA_RNA" />
+      <nodes>
+        <classShapeMoniker Id="9fdbba00-1e07-44b6-bd7b-796a45eea05c" />
+        <classShapeMoniker Id="ed7aa3f1-2f13-4dd4-807e-658a5293058f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.53125 : 6.65549967447917); (5.53125 : 9.52329752604167); (4.375 : 9.52329752604167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/Gene/Gene_DNA" />
+      <nodes>
+        <classShapeMoniker Id="f457e38e-0fc7-492f-8dc2-44fb3375efe2" />
+        <classShapeMoniker Id="9fdbba00-1e07-44b6-bd7b-796a45eea05c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 5.74204802604167); (3.125 : 5.74204802604167); (3.125 : 4.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/Gene/Gene_DiseaseGenetic" />
+      <nodes>
+        <classShapeMoniker Id="f457e38e-0fc7-492f-8dc2-44fb3375efe2" />
+        <classShapeMoniker Id="e5d114ef-3fd1-4066-9bb8-c45976c91a42" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.625 : 2.03929768880208); (7.5 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/Disease/Disease_PatientDiagnosi" />
+      <nodes>
+        <classShapeMoniker Id="9ad3975a-76d3-4286-a07e-fc09da18a144" />
+        <classShapeMoniker Id="534499b2-d202-4f95-b5e2-df10636eb9e7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 3.47280110677083); (5.625 : 3.98640055338542); (4.125 : 3.98640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseDataContext/Disease/Disease_DiseaseGenetic" />
+      <nodes>
+        <classShapeMoniker Id="9ad3975a-76d3-4286-a07e-fc09da18a144" />
+        <classShapeMoniker Id="e5d114ef-3fd1-4066-9bb8-c45976c91a42" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

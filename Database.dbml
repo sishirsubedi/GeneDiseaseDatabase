@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GeneDisease" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-94GIPOB\SQLEXPRESS;Initial Catalog=GeneDisease;User ID=glassfish" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GeneDiseaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserLogin" Member="UserLogins">
+    <Type Name="UserLogin">
+      <Column Name="UserLoginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="LoginName" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNA" Member="RNAs">
+    <Type Name="RNA">
+      <Column Name="RNAID" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RNALength" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AlternativeSplicing" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DNAID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="RNA_Protein" Member="Proteins" ThisKey="RNAID" OtherKey="RNAID" Type="Protein" />
+      <Association Name="DNA_RNA" Member="DNA" ThisKey="DNAID" OtherKey="DNAID" Type="DNA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Protein" Member="Proteins">
+    <Type Name="Protein">
+      <Column Name="ProteinID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinLength" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinMass" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinStructure" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="StrcutureAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RNAID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="RNA_Protein" Member="RNA" ThisKey="RNAID" OtherKey="RNAID" Type="RNA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatientDiagnosis" Member="PatientDiagnosis">
+    <Type Name="PatientDiagnosi">
+      <Column Name="PDID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PDName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Patient_PatientDiagnosi" Member="Patient" ThisKey="PatientID" OtherKey="PatientID" Type="Patient" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Disease_PatientDiagnosi" Member="Disease" ThisKey="DiseaseID" OtherKey="DiseaseID" Type="Disease" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Patient" Member="Patients">
+    <Type Name="Patient">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Symptom" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalizedDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PatientCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Patient_PatientDiagnosi" Member="PatientDiagnosis" ThisKey="PatientID" OtherKey="PatientID" Type="PatientDiagnosi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pathway" Member="Pathways">
+    <Type Name="Pathway">
+      <Column Name="PathwayID" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PathwayName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CellularProcess" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Pathway_GeneNetwork" Member="GeneNetworks" ThisKey="PathwayID" OtherKey="PathwayID" Type="GeneNetwork" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneNetwork" Member="GeneNetworks">
+    <Type Name="GeneNetwork">
+      <Column Name="GNID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GNName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PathwayID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Pathway_GeneNetwork" Member="Pathway" ThisKey="PathwayID" OtherKey="PathwayID" Type="Pathway" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Gene_GeneNetwork" Member="Gene" ThisKey="GeneID" OtherKey="EntrezGeneID" Type="Gene" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Gene" Member="Genes">
+    <Type Name="Gene">
+      <Column Name="EntrezGeneID" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GeneSymbol" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Organism" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneAlias" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Gene_GeneNetwork" Member="GeneNetworks" ThisKey="EntrezGeneID" OtherKey="GeneID" Type="GeneNetwork" />
+      <Association Name="Gene_DNA" Member="DNAs" ThisKey="EntrezGeneID" OtherKey="GeneID" Type="DNA" />
+      <Association Name="Gene_DiseaseGenetic" Member="DiseaseGenetics" ThisKey="EntrezGeneID" OtherKey="GeneID" Type="DiseaseGenetic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DNA" Member="DNAs">
+    <Type Name="DNA">
+      <Column Name="DNAID" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Locus" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ExonCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Chromosome" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DNALength" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DNAOrientation" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="DNA_RNA" Member="RNAs" ThisKey="DNAID" OtherKey="DNAID" Type="RNA" />
+      <Association Name="Gene_DNA" Member="Gene" ThisKey="GeneID" OtherKey="EntrezGeneID" Type="Gene" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiseaseGenetics" Member="DiseaseGenetics">
+    <Type Name="DiseaseGenetic">
+      <Column Name="DGID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DGName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DiseaseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Gene_DiseaseGenetic" Member="Gene" ThisKey="GeneID" OtherKey="EntrezGeneID" Type="Gene" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Disease_DiseaseGenetic" Member="Disease" ThisKey="DiseaseID" OtherKey="DiseaseID" Type="Disease" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Disease" Member="Diseases">
+    <Type Name="Disease">
+      <Column Name="DiseaseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DiseaseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cure" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="OnsetAge" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Symptom" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Medicine" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicineCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Disease_PatientDiagnosi" Member="PatientDiagnosis" ThisKey="DiseaseID" OtherKey="DiseaseID" Type="PatientDiagnosi" />
+      <Association Name="Disease_DiseaseGenetic" Member="DiseaseGenetics" ThisKey="DiseaseID" OtherKey="DiseaseID" Type="DiseaseGenetic" />
+    </Type>
+  </Table>
+  <Function Name="dbo.UDSP_ViewRecord_RNA" Method="UDSP_ViewRecord_RNA">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="UDSP_ViewRecord_RNAResult">
+      <Column Name="RNAID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RNALength" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AlternativeSplicing" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DNAID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord_Protein" Method="UDSP_ViewRecord_Protein">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="UDSP_ViewRecord_ProteinResult">
+      <Column Name="ProteinID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinLength" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinMass" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinStructure" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="StrcutureAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RNAID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord_Patient" Method="UDSP_ViewRecord_Patient">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UDSP_ViewRecord_PatientResult">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Symptom" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalizedDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PatientCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord_Pathway" Method="UDSP_ViewRecord_Pathway">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="UDSP_ViewRecord_PathwayResult">
+      <Column Name="PathwayID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PathwayName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CellularProcess" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord_Gene" Method="UDSP_ViewRecord_Gene">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="UDSP_ViewRecord_GeneResult">
+      <Column Name="EntrezGeneID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneSymbol" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Organism" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneAlias" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord_DNA" Method="UDSP_ViewRecord_DNA">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="UDSP_ViewRecord_DNAResult">
+      <Column Name="DNAID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Locus" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ExonCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Chromosome" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DNALength" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DNAOrientation" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord_Disease" Method="UDSP_ViewRecord_Disease">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UDSP_ViewRecord_DiseaseResult">
+      <Column Name="DiseaseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cure" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="OnsetAge" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Symptom" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Medicine" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicineCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_ViewRecord" Method="UDSP_ViewRecord">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UDSP_ViewRecordResult">
+      <Column Name="EntrezGeneID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneSymbol" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Organism" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneAlias" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_UpdateRNA" Method="UDSP_UpdateRNA">
+    <Parameter Name="RNAID" Parameter="rNAID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="RNALength" Parameter="rNALength" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="AlternativeSplicing" Parameter="alternativeSplicing" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DNAID" Parameter="dNAID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_UpdateProtein" Method="UDSP_UpdateProtein">
+    <Parameter Name="ProteinID" Parameter="proteinID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ProteinName" Parameter="proteinName" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ProteinLength" Parameter="proteinLength" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProteinMass" Parameter="proteinMass" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProteinType" Parameter="proteinType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProteinStructure" Parameter="proteinStructure" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="StrcutureAvailable" Parameter="strcutureAvailable" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNAID" Parameter="rNAID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_UpdatePatient" Method="UDSP_UpdatePatient">
+    <Parameter Name="PatientID" Parameter="patientID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Duration" Parameter="duration" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Symptom" Parameter="symptom" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="HospitalizedDays" Parameter="hospitalizedDays" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RegisterDate" Parameter="registerDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UpdateDate" Parameter="updateDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PatientCost" Parameter="patientCost" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_UpdatePathway" Method="UDSP_UpdatePathway">
+    <Parameter Name="PathwayID" Parameter="pathwayID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="PathwayName" Parameter="pathwayName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CellularProcess" Parameter="cellularProcess" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_UpdateGene" Method="UDSP_UpdateGene">
+    <Parameter Name="EntrezGeneID" Parameter="entrezGeneID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneSymbol" Parameter="geneSymbol" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneName" Parameter="geneName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GeneType" Parameter="geneType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Organism" Parameter="organism" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneAlias" Parameter="geneAlias" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_UpdateDNA" Method="UDSP_UpdateDNA">
+    <Parameter Name="DNAID" Parameter="dNAID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Locus" Parameter="locus" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ExonCount" Parameter="exonCount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Chromosome" Parameter="chromosome" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DNALength" Parameter="dNALength" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="DNAOrientation" Parameter="dNAOrientation" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneID" Parameter="geneID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_UpdateDisease" Method="UDSP_UpdateDisease">
+    <Parameter Name="DiseaseID" Parameter="diseaseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DiseaseName" Parameter="diseaseName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DiseaseType" Parameter="diseaseType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Cure" Parameter="cure" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="OnsetAge" Parameter="onsetAge" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Symptom" Parameter="symptom" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Medicine" Parameter="medicine" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MedicineCost" Parameter="medicineCost" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_PatientDiagnosis" Method="UDSP_PatientDiagnosis">
+    <Parameter Name="Hint" Parameter="hint" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="UDSP_PatientDiagnosisResult">
+      <Column Name="DiseaseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cure" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Medicine" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Symptom" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_PatientCost" Method="UDSP_PatientCost">
+    <Parameter Name="patientID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UDSP_PatientCostResult">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalizedDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalCost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Medicine" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicineCost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_GenomicAnalysis" Method="UDSP_GenomicAnalysis">
+    <Parameter Name="GeneID" Parameter="geneID" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="UDSP_GenomicAnalysisResult">
+      <Column Name="EntrezGeneID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DNAID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Chromosome" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AlternativeSplicing" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProteinType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_General" Method="UDSP_General">
+    <ElementType Name="UDSP_GeneralResult">
+      <Column Name="DiseaseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneSymbol" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPatient" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_Epidemiology" Method="UDSP_Epidemiology">
+    <Parameter Name="DiseaseName" Parameter="diseaseName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="UDSP_EpidemiologyResult">
+      <Column Name="DiseaseName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiseaseType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OnsetAge" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Symptom" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPatient" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AverageCost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_RNA" Method="UDSP_DeleteRecord_RNA">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_Protein" Method="UDSP_DeleteRecord_Protein">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_Patient" Method="UDSP_DeleteRecord_Patient">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_Pathway" Method="UDSP_DeleteRecord_Pathway">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_Gene" Method="UDSP_DeleteRecord_Gene">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_DNA" Method="UDSP_DeleteRecord_DNA">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord_Disease" Method="UDSP_DeleteRecord_Disease">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_DeleteRecord" Method="UDSP_DeleteRecord">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddRNA" Method="UDSP_AddRNA">
+    <Parameter Name="RNAID" Parameter="rNAID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="RNALength" Parameter="rNALength" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="AlternativeSplicing" Parameter="alternativeSplicing" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DNAID" Parameter="dNAID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddProtein" Method="UDSP_AddProtein">
+    <Parameter Name="ProteinID" Parameter="proteinID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ProteinName" Parameter="proteinName" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ProteinLength" Parameter="proteinLength" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProteinMass" Parameter="proteinMass" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProteinType" Parameter="proteinType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProteinStructure" Parameter="proteinStructure" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="StrcutureAvailable" Parameter="strcutureAvailable" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNAID" Parameter="rNAID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddPatient" Method="UDSP_AddPatient">
+    <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Duration" Parameter="duration" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Symptom" Parameter="symptom" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="HospitalizedDays" Parameter="hospitalizedDays" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RegisterDate" Parameter="registerDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UpdateDate" Parameter="updateDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PatientCost" Parameter="patientCost" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddPathway" Method="UDSP_AddPathway">
+    <Parameter Name="PathwayID" Parameter="pathwayID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="PathwayName" Parameter="pathwayName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CellularProcess" Parameter="cellularProcess" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddGene" Method="UDSP_AddGene">
+    <Parameter Name="EntrezGeneID" Parameter="entrezGeneID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneSymbol" Parameter="geneSymbol" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneName" Parameter="geneName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GeneType" Parameter="geneType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Organism" Parameter="organism" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneAlias" Parameter="geneAlias" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddDNA" Method="UDSP_AddDNA">
+    <Parameter Name="DNAID" Parameter="dNAID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Locus" Parameter="locus" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ExonCount" Parameter="exonCount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Chromosome" Parameter="chromosome" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DNALength" Parameter="dNALength" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="DNAOrientation" Parameter="dNAOrientation" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GeneID" Parameter="geneID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UDSP_AddDisease" Method="UDSP_AddDisease">
+    <Parameter Name="DiseaseName" Parameter="diseaseName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DiseaseType" Parameter="diseaseType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Cure" Parameter="cure" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="OnsetAge" Parameter="onsetAge" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Symptom" Parameter="symptom" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Medicine" Parameter="medicine" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MedicineCost" Parameter="medicineCost" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

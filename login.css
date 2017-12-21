@@ -1,0 +1,62 @@
+﻿.login {
+    text-align: left;
+    max-height:10px;    
+    margin: 5px 5px;
+}
+.login span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 20px;
+    margin: 200px auto;
+    background: black;
+    border-radius: 50px;
+    -webkit-animation: login 0.9s infinite alternate;
+    -moz-animation: login 0.9s infinite alternate;
+}
+.login span:nth-of-type(2) {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+}
+.login span:nth-of-type(3) {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+}
+.login span:nth-of-type(4) {
+    -webkit-animation-delay: 0.9s;
+    -moz-animation-delay: 0.9s;
+}
+
+.login span:nth-of-type(5) {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+}
+
+@-webkit-keyframes login {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 0.9;
+    -webkit-transform: translateY(0);
+  }
+  100% {
+    width: 24px;
+    height: 24px;
+    opacity: 0.1;
+    -webkit-transform: translateY(-21px);
+  }
+}
+@-moz-keyframes login {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 0.9;
+    -moz-transform: translateY(0);
+  }
+  100% {
+    width: 24px;
+    height: 24px;
+    opacity: 0.1;
+    -moz-transform: translateY(-21px);
+  }
+}
